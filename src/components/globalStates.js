@@ -9,10 +9,11 @@ import CountUp from 'react-countup';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 1000,
+    maxWidth:"100%",
     height: 120,
-    margin: "auto",
+     margin: "auto",
     marginTop: "50px",
+  
   },
  
   title: {
@@ -47,12 +48,13 @@ export default function GlobalStats() {
   if (loading === true) {
     return (
       <div className={classes.root}>
-        <Grid container spacing={3}>
+        <Grid container    justify="center" >
           {Array(9)
             .fill()
             .map((item, index) => (
-              <Grid item xs={12} sm={6} md={6} xl={4} key={index}>
+              <Grid item style={{ margin: "0px 10px"}} xs={10} sm={5} md={5} xl={3} key={index}>
                 <Skeleton variant="rect" height={118} />
+                <br/>
               </Grid>
             ))}
         </Grid>
@@ -62,11 +64,11 @@ export default function GlobalStats() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container   justify="center">
         {Object.keys(globalData).map((key, ind) => {
           return (
-            <Grid item xs={12} sm={6} md={6} xl={4} key={ind}>
-              <Card className={classes.root}>
+            <Grid item xs={10}    style={{ margin: "0px 10px"}} sm={5}  lg={4} md={5}  xl={3}  key={ind}>
+              <Card  className={classes.root}>
                 <CardContent>
                   <Typography className={classes.title} color="textSecondary" gutterBottom>
                     {key.replace(/_/g, " ")}
